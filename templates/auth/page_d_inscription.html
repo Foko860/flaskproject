@@ -17,6 +17,8 @@
         <p class="text-center">Créer un nouveau compte</p>
 
         <form id="inscriptionForm" action="{{ url_for('auth.inscription') }}" method="POST">
+            {{ form.hidden_tag() }}
+
             <div class="mb-3">
                 <label for="nomComplet" class="form-label">Nom complet</label>
                 <input type="text" id="nomComplet" name="nomComplet" class="form-control" required>
