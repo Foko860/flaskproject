@@ -1,0 +1,21 @@
+{
+    "fr": {
+      "title": "Dashboard des Capteurs",
+      "temperature": "Température",
+      "humidity": "Humidité",
+      "co2": "CO₂",
+      "luminosity": "Luminosité",
+      "actuators": "Accéder aux Actionneurs",
+      "footer": "© 2025 SmartAgro - Interface Locale"
+    },
+    "en": {
+      "title": "Sensor Dashboard",
+      "temperature": "Temperature",
+      "humidity": "Humidity",
+      "co2": "CO₂",
+      "luminosity": "Luminosity",
+      "actuators": "Access Actuators",
+      "footer": "© 2025 SmartAgro - Local Interface"
+    }
+  }
+  

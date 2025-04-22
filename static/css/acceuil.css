@@ -1,0 +1,301 @@
+ /* Reset de base */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #f4f9f5;
+    color: #333;
+  }
+  
+  /* ---------------- Header ---------------- */
+  header {
+    background: #25523B;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 28px;
+  }
+  
+  button.language-btn{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    size: 89px;
+    font-size: 30px;
+  }
+
+  .inscription {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    size: 89px;
+    font-size: 30px;
+  }
+
+  button.language-btn{
+    margin-left: 120px;
+  }
+  
+  /* ---------------- Sections ---------------- */
+  section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  section h2 {
+    font-size: 28px;
+    color: #25523B;
+    margin-bottom: 20px;
+  }
+  
+  section p, section li {
+    font-size: 16px;
+    color: #444;
+  }
+  
+  .intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .intro-image img {
+    max-width: 100%;
+    width: 350px;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-text {
+    max-width: 600px;
+  }
+  
+  img{
+      width:200px;
+      height: 200px;
+  }
+  
+  /* ---------------- CTA Button ---------------- */
+  .btn {
+    background-color: #25523B;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #25523B;
+  }
+  
+  /* ---------------- Capteurs interactifs ---------------- */
+  .schema {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+  }
+  
+  .element {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .element:hover {
+    transform: translateY(-8px);
+  }
+  
+  .element h3 {
+    margin-bottom: 10px;
+    color: #4b7743;
+  }
+  
+  .info {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    width: 200px;
+    z-index: 10;
+  }
+  
+  #capteurs {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .capteurs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .capteur-card {
+    background-color: #c5ede7;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .capteur-card img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  
+  .capteur-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .capteur-card h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #25523B;
+  }
+  
+  .info-box {
+    margin-top: 40px;
+    padding: 20px;
+    background: #c5ede7;
+    border-left: 6px solid #25523B;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  
+  /* ---------------- Objectifs ---------------- */
+  #objectifs {
+    padding: 60px 20px;
+    background-color: #f8fefb;
+  }
+  
+  #objectifs h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #25523B;
+  }
+  
+  /* Nouvelle structure en flex */
+  .objectif-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .objectif-flex img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+  }
+  
+  .objectif-flex .texte {
+    max-width: 600px;
+  }
+  
+  .objectif-flex .texte h3 {
+    color: #25523B;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .objectif-flex .texte p {
+    font-size: 16px;
+    color: #444;
+  }
+  
+  /* ---------------- Footer ---------------- */
+  footer {
+    background-color: #25523B;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  
+  
+  /* ---------------- Responsive ---------------- */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      margin-top: 15px;
+    }
+  
+    .element {
+      width: 90%;
+    }
+  
+    .intro-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .intro-text {
+      max-width: 100%;
+    }
+  
+    .objectif-flex {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .objectif-flex img {
+      margin-bottom: 10px;
+    }
+  
+  }

@@ -1,0 +1,314 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Page Layout */
+body {
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background-color: #2E5D44;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    font-size: 24px;
+}
+.logo {
+    width: 120px;
+    border-radius: 100%;
+    
+}
+nav{
+    padding: 10px;
+}
+
+/* Content Section */
+#content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Prevents sidebar overlap */
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Cards */
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+  
+.card-header {
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+}
+.sensor-card{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 200px;
+
+}
+
+#humidityChart {
+    max-width: 400px;
+    max-height: 300px;
+    margin: auto;
+    width:100;
+    height:100;
+}
+
+.lamp-container {
+    display: flex;
+    max-width: 400px;
+    max-height: 300px;
+    flex-direction: column;
+    align-items: center;
+    margin-top:-80px ;
+    padding-left: 50px;
+}
+
+.lamp {
+    width: 60px;
+    height: 80px;
+    background: yellow;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* Light glow effect */
+.light {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 0, 0);
+    transition: background 0.5s ease-in-out;
+}
+
+/* Thermometer */
+.thermometer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80px;
+    height: 180px;
+    background: #ddd;
+    border-radius: 40px;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.thermometer-fill {
+    width: 100%;
+    height: 0%;
+    background-color: red;
+    transition: height 1s ease-in-out, background-color 0.5s;
+}
+
+
+/* CO2 level */
+
+/* Gauge Container */
+.gauge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Semi-Circular Gauge */
+.gauge {
+    width: 200px;
+    height: 100px;
+    background: conic-gradient(
+        red 0deg, red 120deg, 
+        orange 120deg, orange 240deg, 
+        green 240deg, green 360deg
+    );
+    border-radius: 100px 100px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Needle */
+.needle {
+    width: 4px;
+    height: 90px;
+    background: black;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+    transition: transform 1s ease-in-out;
+}
+
+/* Labels (0%, 50%, 100%) */
+.gauge-label {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+.gauge-label.safe {
+    left: 10px;
+    bottom: 5px;
+}
+.gauge-label.warning {
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+.gauge-label.danger {
+    right: 10px;
+    bottom: 5px;
+}
+
+/* CO2 Level Display */
+.co2-value {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ /* Tank Container */
+ .tank-container {
+    width: 120px;
+    height: 180px;
+    background: #ddd;
+    border: 3px solid #333;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 10px; /* Space for water level display */
+}
+
+/* Water Fill (Changes dynamically) */
+.water-fill {
+    width: 100%;
+    height: 0%; /* Starts empty */
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    transition: height 1s ease-in-out;
+}
+
+/* Labels */
+.tank-label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.tank-label.top {
+    top: 10px;
+}
+.tank-label.bottom {
+    bottom: 10px;
+}
+
+/* Water Level Display (Outside the tank) */
+.water-level-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+
+.sensor-info{
+    flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+.sensor-icon {
+    
+    font-size: 2rem;
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    background-color: #285440;
+      
+}
+.sensor-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+/* Export Button */
+.btn-success {
+    display: block;
+    margin: 20px auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #285440;
+}
+
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /*  Stacks cards vertically on small screens */
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; 
+        min-width: unset; 
+}
+}

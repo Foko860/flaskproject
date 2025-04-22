@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Left-Aligned Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acceuil.css') }}">
+    <script defer src="{{ url_for('static', filename='js/acceuil.js') }}"></script>
+</head>
+<body>
+ 
+    <header>
+      <img src="{{ url_for('static', filename='static_images/logo.png') }}" alt="logo">
+        <h1>Agriculture Intelligente</h1>
+        
+         <div>
+          <button class="language-btn" onclick="toggleLanguage()">🌍</button>
+          <a href="{{ url_for('auth.inscription') }}" class="inscription">👤</a>
+
+      </div>
+    </header>
+
+    <section id="introduction">
+      <div class="intro-container">
+        <div class="intro-image">
+          <img src="{{ url_for('static', filename='static_images/farm.png') }}" alt="Champ agricole connecté avec des capteurs">
+        </div>
+        <div class="intro-text">
+          <h2>🌾 L’Agriculture Intelligente, une révolution connectée</h2>
+          <p>
+            L’agriculture moderne fait face à de nombreux défis : changement climatique, optimisation des ressources et automatisation.
+            Pour répondre à ces enjeux, le projet Agriculture Intelligente propose une solution technologique basée sur l’IoT pour surveiller et automatiser la gestion des cultures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="objectifs">
+      <h2>🎯 Les Objectifs du Projet</h2>
+    
+      <div class="objectif-flex">
+        <div class="texte">
+          <h3>🛠️ Automatiser</h3>
+          <p>Réduction de la charge de travail avec des actions automatiques.</p>
+        </div>
+        <img src="{{ url_for('static', filename='static_images/automatiser.png') }}" alt="Automatiser">
+      </div>
+    
+      <div class="objectif-flex">
+        <div class="texte">
+          <h3>📊 Optimiser les ressources</h3>
+          <p>Utilisation intelligente de l’eau et de l’énergie.</p>
+        </div>
+        <img src="{{ url_for('static', filename='static_images/optimiser.png') }}" alt="Optimiser les ressources">
+      </div>
+    
+      <div class="objectif-flex">
+        <div class="texte">
+          <h3>📡 Surveiller en temps réel</h3>
+          <p>Interface intuitive pour un suivi des cultures.</p>
+        </div>
+        <img src="{{ url_for('static', filename='static_images/surveiller.png') }}" alt="Surveiller en temps réel">
+      </div>
+    
+      <div class="objectif-flex">
+        <div class="texte">
+          <h3>🔒 Sécuriser les données</h3>
+          <p>Protection des échanges d’informations via MQTT.</p>
+        </div>
+        <img src="{{ url_for('static', filename='static_images/securiser.png') }}" alt="Sécuriser les données">
+      </div>
+    </section>
+    
+
+    <section id="capteurs">
+        <h2>🌿 Les Capteurs Utilisés dans le Projet</h2>
+        <p>Clique sur chaque capteur pour découvrir son rôle dans le système d’agriculture intelligente :</p>
+      
+        <div class="capteurs-container">
+          <div class="capteur-card" onclick="showInfo('yl69')">
+            <img src="https://cdn-icons-png.flaticon.com/512/6157/6157895.png" alt="YL-69" />
+            <h3>YL-69</h3>
+          </div>
+      
+          <div class="capteur-card" onclick="showInfo('dht22')">
+            <img src="https://cdn-icons-png.flaticon.com/512/16338/16338649.png" alt="DHT22" />
+            <h3>DHT22</h3>
+          </div>
+      
+          <div class="capteur-card" onclick="showInfo('bh1750')">
+            <img src="https://cdn-icons-png.flaticon.com/512/10720/10720990.png" alt="BH1750" />
+            <h3>BH1750</h3>
+          </div>
+      
+          <div class="capteur-card" onclick="showInfo('sen0159')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2828/2828471.png" alt="SEN0159" />
+            <h3>SEN0159</h3>
+          </div>
+      
+          <div class="capteur-card" onclick="showInfo('water')">
+            <img src="https://cdn-icons-png.flaticon.com/512/8434/8434079.png" alt="Water Sensor" />
+            <h3>Niveau d’eau</h3>
+          </div>
+        </div>
+      
+        <div id="capteur-info" class="info-box">
+          <p>Clique sur un capteur pour voir les détails ici.</p>
+        </div>
+      </section>
+      
+
+    <section id="fonctionnement">
+        <h2>⚙️ Comment Fonctionne le Système ?</h2>
+        <div class="schema">
+            <div class="element" id="capteur" onmouseover="showHoverInfo('capteur')" onmouseout="hideHoverInfo('capteur')">
+                <img src="{{ url_for('static', filename='static_images/capteur.png') }}" alt="Capteur IoT">
+                <p>Capteurs IoT</p>
+                <div class="info" id="info-capteur">Le capteur d'humidité mesure le taux d’humidité du sol et envoie l'information au système.</div>
+            </div>
+            <div class="element" id="microcontroleur" onmouseover="showHoverInfo('microcontroleur')" onmouseout="hideHoverInfo('microcontroleur')">
+                <img src="{{ url_for('static', filename='static_images/esp32.png') }}" alt="Microcontrôleur ESP32">
+                <p>Microcontrôleur (ESP32)</p>
+                <div class="info" id="info-microcontroleur">Le microcontrôleur reçoit les données des capteurs et les transmet à la base de données.</div>
+            </div>
+            <div class="element" id="base-donnees" onmouseover="showHoverInfo('base-donnees')" onmouseout="hideHoverInfo('base-donnees')">
+                <img src="{{ url_for('static', filename='static_images/bdd.png') }}" alt="Base de données">
+                <p>Base de données</p>
+                <div class="info" id="info-base-donnees">La base de données stocke les informations reçues pour une analyse ultérieure.</div>
+            </div>
+            <div class="element" id="application-web" onmouseover="showHoverInfo('application-web')" onmouseout="hideHoverInfo('application-web')">
+                <img src="{{ url_for('static', filename='static_images/logo.png') }}" alt="Application web">
+                <p>Application web</p>
+                <div class="info" id="info-application-web">L'application web permet aux agriculteurs de visualiser et contrôler leur exploitation à distance.</div>
+            </div>
+            <div class="element" id="actionneur" onmouseover="showHoverInfo('actionneur')" onmouseout="hideHoverInfo('actionneur')">
+                <img src="{{ url_for('static', filename='static_images/fan.png') }}" alt="Actionneurs">
+                <p>Actionneurs (Pompe, Ventilation, Éclairage)</p>
+                <div class="info" id="info-actionneur">Les actionneurs automatisent des tâches comme l'irrigation et la ventilation en fonction des données reçues.</div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer class=" text-white text-center py-3 mt-4">
+      <div class="container">
+        <p class="mb-0">© 2025 SmartAgro - Interface Locale</p>
+      </div>
+    </footer>
+
+
+</body>
+</html>  

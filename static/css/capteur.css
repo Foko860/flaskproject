@@ -1,0 +1,97 @@
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #343a40;
+}
+  
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.navbar {
+    background-color: #285440;
+}
+.logo {
+    width: 80px;
+    border-radius: 100%;
+  }
+.navbar-brand, .navbar-nav .nav-link {
+    color: #fff;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+  
+.card-header {
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+}
+.sensor-card{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.sensor-info{
+    flex: 1;
+}
+
+.sensor-icon {
+    
+    font-size: 2rem;
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    background-color: #285440;
+      
+}
+.sensor-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #285440;
+}
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1c7e52
+}
+
+@media (max-width: 768px) {
+    .sensor-card,
+    .actuator-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .sensor-icon,
+    .actuator-icon {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .actuator-buttons {
+      justify-content: center;
+    }
+  }
+
+  

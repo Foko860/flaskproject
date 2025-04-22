@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Définition du charset et du responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgro - Connexion</title>
+
+    <!-- Lien vers le fichier CSS personnalisé -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/connexion.css') }}">
+
+    <!-- Inclusion du script JS de validation + interactions -->
+    <script defer src="{{ url_for('static', filename='js/connexion.js') }}"></script>
+</head>
+<body>
+    <!-- Conteneur principal centré -->
+    <div class="login-container">
+        <!-- Boîte contenant le formulaire + image -->
+        <div class="login-box">
+
+            <!-- Section gauche : formulaire de connexion -->
+            <div class="login-form">
+
+                <!-- Titre + icônes (langue, compte) + logo -->
+                <div class="logo-title">
+                    <!-- Bouton pour changer de langue -->
+                    <button class="language-btn" onclick="toggleLanguage()">🌍</button>
+
+                    <!-- Bouton pour changer de type de compte -->
+                    <button class="account-switch-btn" onclick="toggleAccount()">👤</button>
+
+                    <!-- Logo de l'appli -->
+                    <img src="{{ url_for('static', filename='static_images/logo.png') }}" alt="SmartAgro" class="logo">
+
+                    <!-- Titre de bienvenue -->
+                    <h1 id="welcome-text">Bienvenue!</h1>
+                </div>
+
+                <!-- Formulaire de connexion -->
+                <form onsubmit="return validateLogin(event)">
+                    <!-- Label d'information -->
+                    <label id="info-text">Entrez vos informations</label>
+
+                    <!-- Champ email -->
+                    <input type="email" id="mail" placeholder="Mail" class="input-field">
+
+                    <!-- Champ mot de passe avec conteneur -->
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Mot de passe" class="input-field">
+                    </div>
+
+                    <!-- Lien mot de passe oublié -->
+                    <p class="forgot-password" id="forgot-text">Mot de passe oublié?</p>
+
+                    <!-- Bouton de soumission -->
+                    <button class="login-button" id="login-text">Se Connecter</button>
+                </form>
+
+                <!-- Lien vers l'inscription -->
+                <p class="signup-text">
+                    <span id="signup-text">Pas de compte?</span>
+                    <!-- Redirige vers la route d'inscription du blueprint `auth` -->
+                    <a href="{{ url_for('auth.inscription') }}">
+                        <span class="signup-link" id="signup-link">s’inscrire</span>
+                    </a>
+                </p>
+            </div>
+
+            <!-- Section droite : image décorative -->
+            <div class="login-image">
+                <img src="{{ url_for('static', filename='static_images/login.png') }}" alt="Nature">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

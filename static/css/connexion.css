@@ -1,0 +1,167 @@
+/* Reset & General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full screen height */
+    width: 100vw;  /* Full screen width */
+}
+
+/* Container principal */
+.login-container {
+    display: flex;
+    height: 100vh; /* Full screen height */
+    width: 100vw;  /* Full screen width */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Box de connexion */
+.login-box {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 0;  /* Remove border-radius to occupy full screen */
+    overflow: hidden;
+    box-shadow: none; /* Remove shadow */
+    width: 100%;
+    height: 100vh; /* Full height */
+}
+
+@media (min-width: 768px) {
+    .login-box {
+        flex-direction: row;
+    }
+}
+
+/* Formulaire */
+.login-form {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .login-form {
+        width: 50%;
+    }
+}
+
+/* Logo and Title */
+.logo-title {
+    text-align: center;
+    position: absolute;
+    top: 20px;  /* Moves the logo towards the top */
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.logo {
+    width: 120px;
+    border-radius: 100%;
+}
+
+/* Language Button */
+.language-btn {
+    margin-bottom: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 290px;
+    gap: 60px;
+
+}
+
+.account-switch-btn {
+    margin-bottom: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 290px;
+    gap: 60px;
+    z-index: 1000;    /* Ensures it stays above other elements */
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-field:focus {
+    border-color: #25523B;
+}
+
+/* Forgot Password */
+.forgot-password {
+    font-size: 12px;
+    color: gray;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Login Button */
+.login-button {
+    width: 100%;
+    background-color: #25523B;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #276749;
+}
+
+/* Signup Text */
+.signup-text {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.signup-link {
+    color: #25523B;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Image Section */
+.login-image {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .login-image {
+        display: block;
+        width: 50%;
+        height: 100%;
+    }
+
+    .login-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

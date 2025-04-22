@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Capteurs - Agriculture Intelligente</title>
+
+  <!-- Bootstrap & Icônes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+
+  <!-- Styles & Scripts locaux -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/capteur.css') }}" />
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <!-- MQTT -->
+  <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="logo-title">
+        <img src="{{ url_for('static', filename='static_images/logo.png') }}" alt="SmartAgro" class="logo" />
+      </div>
+      <select id="languageSelector">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <div class="container mt-4">
+    <h1 id="title" class="mb-4">Dashboard des Capteurs</h1>
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+
+              <!-- Température -->
+              <div class="col-sm-6 mb-3">
+                <div class="sensor-card">
+                  <div class="sensor-icon">
+                    <i class="bi bi-thermometer-half"></i>
+                  </div>
+                  <div class="sensor-info">
+                    <p id="label-temperature" class="data-label">Température :</p>
+                    <p id="temperature" class="h4">-- °C</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Humidité -->
+              <div class="col-sm-6 mb-3">
+                <div class="sensor-card">
+                  <div class="sensor-icon">
+                    <i class="bi bi-droplet-fill"></i>
+                  </div>
+                  <div class="sensor-info">
+                    <p id="label-humidity" class="data-label">Humidité :</p>
+                    <p id="humidite" class="h4">-- %</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CO2 -->
+              <div class="col-sm-6 mb-3">
+                <div class="sensor-card">
+                  <div class="sensor-icon">
+                    <i class="bi bi-cloud-fill"></i>
+                  </div>
+                  <div class="sensor-info">
+                    <p id="label-co2" class="data-label">CO₂ :</p>
+                    <p id="taux_de_co2" class="h4">-- ppm</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Luminosité -->
+              <div class="col-sm-6 mb-3">
+                <div class="sensor-card">
+                  <div class="sensor-icon">
+                    <i class="bi bi-brightness-high-fill"></i>
+                  </div>
+                  <div class="sensor-info">
+                    <p id="label-luminosity" class="data-label">Luminosité :</p>
+                    <p id="luminosite" class="h4">-- lux</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Lien vers actionneurs -->
+            <div class="text-end mt-4">
+              <a href="../actionneur/actionneur.html" id="actuators-link" class="btn btn-primary" style="background-color: #285440;">
+                Accéder aux Actionneurs
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3 mt-4">
+    <div class="container">
+      <p id="footer-text" class="mb-0">© 2025 SmartAgro - Interface Locale</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
