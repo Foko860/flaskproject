@@ -15,7 +15,7 @@ routes = Blueprint('routes', __name__)
 def inscription():
     if request.method == "POST":
         nom = request.form["nomComplet"]
-        mail = request.form["mail"]
+        mail = request.form["email"]
         role = request.form["role"]
         password = request.form["password"]
 
