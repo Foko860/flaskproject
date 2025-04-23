@@ -1,7 +1,10 @@
+import os
+
 class Config:
-    SECRET_KEY = 'secret_key'  # Clé secrète pour Flask-WTF
-    MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'root'  # Par défaut sous XAMPP
-    MYSQL_PASSWORD = ''  # Laisse vide si tu n’as pas de mot de passe
-    MYSQL_DB = 'projet_flask'
+    SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
+    MYSQL_HOST = os.getenv('MYSQL_HOST', 'localhost')
+    MYSQL_USER = os.getenv('MYSQL_USER', 'root')
+    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', '')
+    MYSQL_DB = os.getenv('MYSQL_DB', 'projet_flask')
+
 
