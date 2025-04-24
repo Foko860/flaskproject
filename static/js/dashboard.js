@@ -50,7 +50,7 @@ let lastData = null;
 // Fonction pour récupérer les données depuis l'API Flask
 async function fetchAllMeasures() {
     try {
-        const response = await fetch("/get_measures");
+        const response = await fetch("https://smart-agro-r8um.onrender.com/get_measures");
         const data = await response.json();
 
         if (data.error) {

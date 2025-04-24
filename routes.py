@@ -75,7 +75,6 @@ def login():
 
 @routes.route('/get_measures')
 def get_measures():
-
         try:
             cur = mysql.connection.cursor()
             cur.execute("""
