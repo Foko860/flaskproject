@@ -50,7 +50,7 @@ let lastData = null;
 // Fonction pour récupérer les données depuis l'API Flask
 async function fetchAllMeasures() {
     try {
-        const response = await fetch("/get_measures");
+        const response = await fetch("http://127.0.0.1:5000/get_measures");
         const data = await response.json();
 
         if (data.error) {
