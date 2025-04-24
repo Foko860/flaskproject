@@ -7,9 +7,10 @@ from routes import auth  # Import du blueprint
 from routes import routes
 
 app = Flask(__name__)
+app.config.from_object(Config)
 app.register_blueprint(auth)
 app.register_blueprint(routes)
-app.config.from_object(Config)
+
 
 # Initialiser MySQL
 mysql.init_app(app)
