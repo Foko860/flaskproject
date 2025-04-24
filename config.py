@@ -4,6 +4,7 @@ import os
 url = urlparse(os.getenv("MYSQL_URL"))
 
 class Config:
+    SECRET_KEY = os.getenv("SECRET_KEY")
     MYSQL_HOST = url.hostname
     MYSQL_PORT = url.port or 3306
     MYSQL_USER = url.username
