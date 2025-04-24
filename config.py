@@ -1,10 +1,13 @@
+from urllib.parse import urlparse
 import os
 
+url = urlparse(os.getenv("MYSQL_URL"))
+
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
-    MYSQL_HOST = os.getenv('MYSQL_HOST', 'localhost')
-    MYSQL_USER = os.getenv('MYSQL_USER', 'root')
-    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', '')
-    MYSQL_DB = os.getenv('MYSQL_DB', 'projet_flask')
+    MYSQL_HOST = url.hostname
+    MYSQL_PORT = url.port or 3306
+    MYSQL_USER = url.username
+    MYSQL_PASSWORD = url.password
+    MYSQL_DB = url.path[1:]  # enlève le / devant le nom de la DB
 
 
