@@ -75,36 +75,31 @@ def login():
 
 @routes.route('/get_measures')
 def get_measures():
-    try:
-        conn = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="",
-            database="projet_flask"
-        )
-        cursor = conn.cursor()
-        cursor.execute("""
-            SELECT temperature, humidite, luminosite, taux_de_co2, niveau_deau 
-            FROM mesure 
-            ORDER BY idmesure DESC LIMIT 1
-        """)
-        data = cursor.fetchone()
-        cursor.close()
-        conn.close()
+    @routes.route('/get_measures')
+    def get_measures():
+        try:
+            cur = mysql.connection.cursor()
+            cur.execute("""
+                SELECT temperature, humidite, luminosite, taux_de_co2, niveau_deau 
+                FROM mesure 
+                ORDER BY idmesure DESC LIMIT 1
+            """)
+            data = cur.fetchone()
+            cur.close()
 
-        if data:
-            return jsonify({
-                "temperature": data[0],
-                "humidite": data[1],
-                "luminosite": data[3],
-                "taux_de_co2": data[2],
-                "niveau_deau": data[4]
-            })
-        else:
-            return jsonify({"error": "Aucune donnée trouvée"}), 404
+            if data:
+                return jsonify({
+                    "temperature": data[0],
+                    "humidite": data[1],
+                    "luminosite": data[2],
+                    "taux_de_co2": data[3],
+                    "niveau_deau": data[4]
+                })
+            else:
+                return jsonify({"error": "Aucune donnée trouvée"}), 404
 
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
 
 @routes.route("/")
