@@ -1,4 +1,6 @@
 from flask import Flask
+import pymysql
+pymysql.install_as_MySQLdb()
 from flask_mysqldb import MySQL
 from flask_login import LoginManager
 from config import Config

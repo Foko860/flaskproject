@@ -10,5 +10,5 @@ class Config:
     MYSQL_USER = url.username
     MYSQL_PASSWORD = url.password
     MYSQL_DB = url.path[1:]  # enlève le / devant le nom de la DB
-
+    MYSQL_UNIX_SOCKET = None
 
