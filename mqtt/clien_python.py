@@ -14,6 +14,7 @@ DB_HOST = "shuttle.proxy.rlwy.net"
 DB_USER = "root"
 DB_PASSWORD = "CQOPOfXQzUgZZckivpJfjFFwPWTntIwC"
 DB_NAME = "railway"
+DB_PORT = 46926
 
 # Connexion MySQL
 def connect_db():
@@ -22,7 +23,8 @@ def connect_db():
             host=DB_HOST,
             user=DB_USER,
             password=DB_PASSWORD,
-            database=DB_NAME
+            database=DB_NAME,
+            port = DB_PORT
         )
     except mysql.connector.Error as e:
         print("Erreur de connexion MySQL:", e)
