@@ -10,10 +10,10 @@ username = "admin"
 password = "admin123"
 
 # Paramètres MySQL
-DB_HOST = "localhost"
+DB_HOST = "shuttle.proxy.rlwy.net"
 DB_USER = "root"
-DB_PASSWORD = ""
-DB_NAME = "projet_flask"
+DB_PASSWORD = "CQOPOfXQzUgZZckivpJfjFFwPWTntIwC"
+DB_NAME = "railway"
 
 # Connexion MySQL
 def connect_db():
