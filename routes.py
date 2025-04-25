@@ -89,8 +89,8 @@ def get_measures():
                 return jsonify({
                     "temperature": data[0],
                     "humidite": data[1],
-                    "luminosite": data[2],
-                    "taux_de_co2": data[3],
+                    "luminosite": data[3],
+                    "taux_de_co2": data[2],
                     "niveau_deau": data[4]
                 })
             else:
