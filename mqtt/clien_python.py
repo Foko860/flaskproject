@@ -24,7 +24,8 @@ def connect_db():
             user=DB_USER,
             password=DB_PASSWORD,
             database=DB_NAME,
-            port = DB_PORT
+            port=DB_PORT,
+            ssl_disabled=True
         )
     except mysql.connector.Error as e:
         print("Erreur de connexion MySQL:", e)
